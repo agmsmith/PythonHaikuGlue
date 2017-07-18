@@ -1,0 +1,29 @@
+name			python_haikuglue
+summary		"Python extensions to access the Haiku C++ API."
+version			0.2-1
+architecture		x86_gcc2
+packager		"Alexander G. M. Smith <agmsmith@ncf.ca>"
+vendor			"Fat Elk Software"
+
+description		"Python glue to access the Haiku C++ API for some operations.
+
+Currently reading/writing file attributes (with conversion of several data types to/from native Python objects), doing a one shot query, and using find_directory are implemented.  More can be added if needed."
+
+copyrights {
+	"1999 Arcane Dragon Software <arcanedragon@pobox.com>"
+	"2005 Mikael Jansson <apps@mikael.jansson.be>"
+}
+
+provides {
+	python_haikuglue = 0.2
+}
+
+requires {
+	haiku >= r1~alpha4_pm
+	cmd:python >= 2.7
+}
+
+urls {
+	"https://github.com/agmsmith/PythonHaikuGlue"
+	"http://mikael.jansson.be/static/apps/beosmodule/"
+}

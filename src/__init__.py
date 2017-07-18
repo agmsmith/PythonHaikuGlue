@@ -1,4 +1,4 @@
-__doc__ = """Haiku OS Glue Module for Python
+__doc__ = """Haiku OS Glue Module for Python, version 0.2
 
 This top level module doesn't do much, see the storage submodule for more.
 
