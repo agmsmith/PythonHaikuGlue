@@ -1,6 +1,10 @@
-"""beos.storage package."""
+"""haikuglue.storage package.
 
-from beos import Enum
+Just a few basic BeOS/Haiku API calls for setting attributes on
+files and doing queries.  Various related type constants are also
+exported."""
+
+from haikuglue import Enum
 
 import _find_directory
 import _fsattr

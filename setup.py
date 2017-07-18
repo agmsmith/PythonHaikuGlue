@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/python
 
 import sys
 libs = ["be"]
@@ -7,31 +7,32 @@ if sys.platform == "zeta":
 
 from distutils.core import setup, Extension
 
-modules = [
-	Extension('beos.storage._find_directory',
+modules_list = [
+	Extension('haikuglue.storage._find_directory',
 		['ext/storage/_find_directory.cpp'],
-		# XXX: Ugly hackery, this should really be added to distutils...
+		extra_compile_args=['-Wno-multichar'],
 		extra_link_args=['-nostart', '-Wl,-soname=_find_directory.so'],
 		libraries=libs),
-	Extension('beos.storage._fsquery',
+	Extension('haikuglue.storage._fsquery',
 		['ext/storage/_fsquery.cpp'],
-		# XXX: Ugly hackery, this should really be added to distutils...
 		extra_link_args=['-nostart', '-Wl,-soname=_fsquery.so'],
 		libraries=libs),
-	Extension('beos.storage._fsattr',
+	Extension('haikuglue.storage._fsattr',
 		['ext/storage/_fsattr.cpp'],
-		# XXX: Ugly hackery, this should really be added to distutils...
+		extra_compile_args=['-Wno-multichar'],
 		extra_link_args=['-nostart', '-Wl,-soname=_fsattr.so'],
 		libraries=libs)]
 
 
-setup(name='BeOS',
-	  version='0.1.0',
-	  description='BeOS Modulels',
+setup(name='HaikuGlue',
+	  version='0.2',
+	  description='Haiku OS API Glue Module',
 	  author='Mikael Jansson',
 	  author_email='apps@mikael.jansson.be',
-	  url='http://mikael.jansson.be',
-	  packages=['beos',
-	  			'beos.storage'],
-	  package_dir={'beos': 'src'},
-	  ext_modules=modules)
+	  maintainer='Alexander G. M. Smith',
+	  maintainer_email='agmsmith@ncf.ca',
+	  url='https://github.com/agmsmith/PythonHaikuGlue',
+	  packages=['haikuglue',
+	  			'haikuglue.storage'],
+	  package_dir={'haikuglue': 'src'},
+	  ext_modules=modules_list)

@@ -53,7 +53,7 @@ static PyObject *bfs_read_attrs( PyObject *self, PyObject *args )
 		if( flags & ATTR_SYMLINK ) mode |= O_NOTRAVERSE;
 		if( ( flags & ATTR_BIG_ENDIAN ) && ( flags & ATTR_LITTLE_ENDIAN ) ) {
 			PyErr_SetString( PyExc_ValueError, 
-							 "can't specify ATTR_BIG_ENDIAN and ATTR_LITTLE_ENDIAN, it's ust not right" );
+							 "can't specify ATTR_BIG_ENDIAN and ATTR_LITTLE_ENDIAN, it's just not right" );
 			return NULL;
 		}
 	} else {
@@ -1079,8 +1079,11 @@ extern "C" DL_EXPORT(PyObject *) init_fsattr( void )
 	PyDict_SetItemString( attr_dict, "LITTLE_ENDIAN", PyInt_FromLong( ATTR_LITTLE_ENDIAN ) );
 
 	// Why look, a whole bunch of untested object constructors...
+	PyDict_SetItemString( dict, "B_AFFINE_TRANSFORM_TYPE", PyInt_FromLong( B_AFFINE_TRANSFORM_TYPE ) );
+	PyDict_SetItemString( dict, "B_ALIGNMENT_TYPE", PyInt_FromLong( B_ALIGNMENT_TYPE ) );
 	PyDict_SetItemString( dict, "B_ANY_TYPE", PyInt_FromLong( B_ANY_TYPE ) );
-	PyDict_SetItemString( dict, "B_ASCII_TYPE", PyInt_FromLong( B_ASCII_TYPE ) );
+	PyDict_SetItemString( dict, "B_ATOM_TYPE", PyInt_FromLong( B_ATOM_TYPE ) );
+	PyDict_SetItemString( dict, "B_ATOMREF_TYPE", PyInt_FromLong( B_ATOMREF_TYPE ) );
 	PyDict_SetItemString( dict, "B_BOOL_TYPE", PyInt_FromLong( B_BOOL_TYPE ) );
 	PyDict_SetItemString( dict, "B_CHAR_TYPE", PyInt_FromLong( B_CHAR_TYPE ) );
 	PyDict_SetItemString( dict, "B_COLOR_8_BIT_TYPE", PyInt_FromLong( B_COLOR_8_BIT_TYPE ) );
@@ -1091,6 +1094,7 @@ extern "C" DL_EXPORT(PyObject *) init_fsattr( void )
 	PyDict_SetItemString( dict, "B_INT32_TYPE", PyInt_FromLong( B_INT32_TYPE ) );
 	PyDict_SetItemString( dict, "B_INT64_TYPE", PyInt_FromLong( B_INT64_TYPE ) );
 	PyDict_SetItemString( dict, "B_INT8_TYPE", PyInt_FromLong( B_INT8_TYPE ) );
+	PyDict_SetItemString( dict, "B_LARGE_ICON_TYPE", PyInt_FromLong( B_LARGE_ICON_TYPE ) );
 	PyDict_SetItemString( dict, "B_MEDIA_PARAMETER_GROUP_TYPE", PyInt_FromLong( B_MEDIA_PARAMETER_GROUP_TYPE ) );
 	PyDict_SetItemString( dict, "B_MEDIA_PARAMETER_TYPE", PyInt_FromLong( B_MEDIA_PARAMETER_TYPE ) );
 	PyDict_SetItemString( dict, "B_MEDIA_PARAMETER_WEB_TYPE", PyInt_FromLong( B_MEDIA_PARAMETER_WEB_TYPE ) );
@@ -1098,26 +1102,32 @@ extern "C" DL_EXPORT(PyObject *) init_fsattr( void )
 	PyDict_SetItemString( dict, "B_MESSENGER_TYPE", PyInt_FromLong( B_MESSENGER_TYPE ) );
 	PyDict_SetItemString( dict, "B_MIME_STRING_TYPE", PyInt_FromLong( B_MIME_STRING_TYPE ) );
 	PyDict_SetItemString( dict, "B_MIME_TYPE", PyInt_FromLong( B_MIME_TYPE ) );
+	PyDict_SetItemString( dict, "B_MINI_ICON_TYPE", PyInt_FromLong( B_MINI_ICON_TYPE ) );
 	PyDict_SetItemString( dict, "B_MONOCHROME_1_BIT_TYPE", PyInt_FromLong( B_MONOCHROME_1_BIT_TYPE ) );
+	PyDict_SetItemString( dict, "B_NETWORK_ADDRESS_TYPE", PyInt_FromLong( B_NETWORK_ADDRESS_TYPE ) );
 	PyDict_SetItemString( dict, "B_OBJECT_TYPE", PyInt_FromLong( B_OBJECT_TYPE ) );
 	PyDict_SetItemString( dict, "B_OFF_T_TYPE", PyInt_FromLong( B_OFF_T_TYPE ) );
 	PyDict_SetItemString( dict, "B_PATTERN_TYPE", PyInt_FromLong( B_PATTERN_TYPE ) );
-	PyDict_SetItemString( dict, "B_POINTER_TYPE", PyInt_FromLong( B_POINTER_TYPE ) );
 	PyDict_SetItemString( dict, "B_POINT_TYPE", PyInt_FromLong( B_POINT_TYPE ) );
+	PyDict_SetItemString( dict, "B_POINTER_TYPE", PyInt_FromLong( B_POINTER_TYPE ) );
+	PyDict_SetItemString( dict, "B_PROPERTY_INFO_TYPE", PyInt_FromLong( B_PROPERTY_INFO_TYPE ) );
 	PyDict_SetItemString( dict, "B_RAW_TYPE", PyInt_FromLong( B_RAW_TYPE ) );
 	PyDict_SetItemString( dict, "B_RECT_TYPE", PyInt_FromLong( B_RECT_TYPE ) );
 	PyDict_SetItemString( dict, "B_REF_TYPE", PyInt_FromLong( B_REF_TYPE ) );
 	PyDict_SetItemString( dict, "B_RGB_32_BIT_TYPE", PyInt_FromLong( B_RGB_32_BIT_TYPE ) );
 	PyDict_SetItemString( dict, "B_RGB_COLOR_TYPE", PyInt_FromLong( B_RGB_COLOR_TYPE ) );
 	PyDict_SetItemString( dict, "B_SIZE_T_TYPE", PyInt_FromLong( B_SIZE_T_TYPE ) );
+	PyDict_SetItemString( dict, "B_SIZE_TYPE", PyInt_FromLong( B_SIZE_TYPE ) );
 	PyDict_SetItemString( dict, "B_SSIZE_T_TYPE", PyInt_FromLong( B_SSIZE_T_TYPE ) );
+	PyDict_SetItemString( dict, "B_STRING_LIST_TYPE", PyInt_FromLong( B_STRING_LIST_TYPE ) );
 	PyDict_SetItemString( dict, "B_STRING_TYPE", PyInt_FromLong( B_STRING_TYPE ) );
 	PyDict_SetItemString( dict, "B_TIME_TYPE", PyInt_FromLong( B_TIME_TYPE ) );
 	PyDict_SetItemString( dict, "B_UINT16_TYPE", PyInt_FromLong( B_UINT16_TYPE ) );
 	PyDict_SetItemString( dict, "B_UINT32_TYPE", PyInt_FromLong( B_UINT32_TYPE ) );
 	PyDict_SetItemString( dict, "B_UINT64_TYPE", PyInt_FromLong( B_UINT64_TYPE ) );
 	PyDict_SetItemString( dict, "B_UINT8_TYPE", PyInt_FromLong( B_UINT8_TYPE ) );
-
+	PyDict_SetItemString( dict, "B_VECTOR_ICON_TYPE", PyInt_FromLong( B_VECTOR_ICON_TYPE ) );
+	PyDict_SetItemString( dict, "B_XATTR_TYPE", PyInt_FromLong( B_XATTR_TYPE ) );
 
 	return mod;
 }
