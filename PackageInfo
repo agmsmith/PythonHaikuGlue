@@ -14,6 +14,10 @@ copyrights {
 	"2005 Mikael Jansson <apps@mikael.jansson.be>"
 }
 
+licenses	{
+	MIT
+}
+
 provides {
 	python_haikuglue = 0.2
 }
