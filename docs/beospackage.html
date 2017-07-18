@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.10: http://docutils.sourceforge.net/" />
+<title>The Py Book</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-09-25 17:49:54 +0200 (Sun, 25 Sep 2005) $
+:Revision: $Revision: 3901 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or 
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+img.borderless {
+  border: 0 }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.line-block {
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid thin gray }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid thin black }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="the-py-book">
+<h1 class="title">The Py Book</h1>
+<div class="sidebar">
+<p class="first sidebar-title">Mmm, pie... &lt;/Homer&gt;</p>
+<img align="right" alt="art/logo.jpg" class="align-right" src="art/logo.jpg" />
+<p>The gateway between BeOS/ZETA/Haiku and the easy-to-use, dynamic
+rapid-prototyping programming language Python.</p>
+<p class="last">Carefully selected functions, classes and constants
+imported from the BeAPI directly to Python, to make <em>your</em> life easier!</p>
+</div>
+<div class="contents topic">
+<p class="topic-title first"><a id="table-of-contents" name="table-of-contents">Table of Contents</a></p>
+<ul class="auto-toc simple">
+<li><a class="reference" href="#about" id="id1" name="id1">1&nbsp;&nbsp;&nbsp;About</a></li>
+<li><a class="reference" href="#installation" id="id2" name="id2">2&nbsp;&nbsp;&nbsp;Installation</a><ul class="auto-toc">
+<li><a class="reference" href="#binary-distribution" id="id3" name="id3">2.1&nbsp;&nbsp;&nbsp;Binary Distribution</a></li>
+<li><a class="reference" href="#source-distribution" id="id4" name="id4">2.2&nbsp;&nbsp;&nbsp;Source Distribution</a></li>
+<li><a class="reference" href="#bleeding-edge-distribution" id="id5" name="id5">2.3&nbsp;&nbsp;&nbsp;Bleeding Edge Distribution</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#reading-guidelines" id="id6" name="id6">3&nbsp;&nbsp;&nbsp;Reading Guidelines</a></li>
+<li><a class="reference" href="#storage-kit" id="id7" name="id7">4&nbsp;&nbsp;&nbsp;Storage Kit</a><ul class="auto-toc">
+<li><a class="reference" href="#classes" id="id8" name="id8">4.1&nbsp;&nbsp;&nbsp;Classes</a></li>
+<li><a class="reference" href="#functions" id="id9" name="id9">4.2&nbsp;&nbsp;&nbsp;Functions</a><ul class="auto-toc">
+<li><a class="reference" href="#find-directory" id="id10" name="id10">4.2.1&nbsp;&nbsp;&nbsp;find_directory()</a></li>
+<li><a class="reference" href="#read-attrs" id="id11" name="id11">4.2.2&nbsp;&nbsp;&nbsp;read_attrs()</a></li>
+<li><a class="reference" href="#remove-attr" id="id12" name="id12">4.2.3&nbsp;&nbsp;&nbsp;remove_attr()</a></li>
+<li><a class="reference" href="#write-attr" id="id13" name="id13">4.2.4&nbsp;&nbsp;&nbsp;write_attr()</a></li>
+<li><a class="reference" href="#query" id="id14" name="id14">4.2.5&nbsp;&nbsp;&nbsp;query()</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#constants" id="id15" name="id15">4.3&nbsp;&nbsp;&nbsp;Constants</a><ul class="auto-toc">
+<li><a class="reference" href="#directory-which" id="id16" name="id16">4.3.1&nbsp;&nbsp;&nbsp;directory_which</a></li>
+<li><a class="reference" href="#types" id="id17" name="id17">4.3.2&nbsp;&nbsp;&nbsp;types</a></li>
+<li><a class="reference" href="#attr" id="id18" name="id18">4.3.3&nbsp;&nbsp;&nbsp;attr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id1" id="about" name="about">1&nbsp;&nbsp;&nbsp;About</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body">Mikael Jansson</td>
+</tr>
+<tr class="field"><th class="field-name">Version:</th><td class="field-body">0.1.0</td>
+</tr>
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">$Date: 2005-10-30 14:15:14 +0100 (Sun, 30 Oct 2005) $</td>
+</tr>
+<tr class="field"><th class="field-name">Revision:</th><td class="field-body">$Revision: 38 $</td>
+</tr>
+<tr class="field"><th class="field-name">Authors:</th><td class="field-body">Parts by Chris Herborth</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id2" id="installation" name="installation">2&nbsp;&nbsp;&nbsp;Installation</a></h1>
+<div class="section">
+<h2><a class="toc-backref" href="#id3" id="binary-distribution" name="binary-distribution">2.1&nbsp;&nbsp;&nbsp;Binary Distribution</a></h2>
+<p>Grab the binary package for your platform, and then issue the following commands (based on platform).</p>
+<p>yellowTAB ZETA Release 1.1:</p>
+<pre class="literal-block">
+$ cd / &amp;&amp; tar xzf BeOS-0.1.0.beos-6.0.1-BePC.tar.gz
+</pre>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id4" id="source-distribution" name="source-distribution">2.2&nbsp;&nbsp;&nbsp;Source Distribution</a></h2>
+<p>Unzip the source package somewhere, <tt class="docutils literal"><span class="pre">cd</span></tt> into it and type the
+following command:</p>
+<pre class="literal-block">
+$ python setup.py install
+</pre>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id5" id="bleeding-edge-distribution" name="bleeding-edge-distribution">2.3&nbsp;&nbsp;&nbsp;Bleeding Edge Distribution</a></h2>
+<p>Check out the latest sources from SVN:</p>
+<pre class="literal-block">
+$ svn co http://svnbox.mine.nu/public/BeOSmodule
+$ cd BeOSmodule
+$ python setup.py install
+</pre>
+</div>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id6" id="reading-guidelines" name="reading-guidelines">3&nbsp;&nbsp;&nbsp;Reading Guidelines</a></h1>
+<p>All of the functions have <tt class="docutils literal"><span class="pre">__doc__</span></tt> strings for your viewing pleasure.
+Very handy if you're using this interactively.</p>
+<p>Modules are often named the same as the kit's name in lower-case characters, e.g. the Storage Kit is named <tt class="docutils literal"><span class="pre">beos.storage</span></tt>.</p>
+</div>
+<div class="section">
+<h1><a class="toc-backref" href="#id7" id="storage-kit" name="storage-kit">4&nbsp;&nbsp;&nbsp;Storage Kit</a></h1>
+<p>Module name: <tt class="docutils literal"><span class="pre">beos.storage</span></tt></p>
+<div class="section">
+<h2><a class="toc-backref" href="#id8" id="classes" name="classes">4.1&nbsp;&nbsp;&nbsp;Classes</a></h2>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id9" id="functions" name="functions">4.2&nbsp;&nbsp;&nbsp;Functions</a></h2>
+<div class="section">
+<h3><a class="toc-backref" href="#id10" id="find-directory" name="find-directory">4.2.1&nbsp;&nbsp;&nbsp;find_directory()</a></h3>
+<p>Signature:</p>
+<pre class="literal-block">
+find_directory(which)
+</pre>
+<p>Finds the specified directory; which must be one of the <tt class="docutils literal"><span class="pre">attr.B_..._DIRECTORY</span></tt>
+constants defined in this module.</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id11" id="read-attrs" name="read-attrs">4.2.2&nbsp;&nbsp;&nbsp;read_attrs()</a></h3>
+<p>Signature:</p>
+<pre class="literal-block">
+read_attrs(filename, flags=0)
+</pre>
+<p>Reads the attributes for filename; returns a dictionary of tuples,
+each tuple is ( type, data ) and the key is the attribute name.</p>
+<p>If flags is <tt class="docutils literal"><span class="pre">attr.SYMLINK</span></tt>, symbolic links <em>will not</em> be traversed;
+you'll get the attribute data for the symlink, not the target.
+If flags has <tt class="docutils literal"><span class="pre">attr.BIG_ENDIAN</span></tt> set, the data will be read from big-endian
+format; if flags has <tt class="docutils literal"><span class="pre">attr.LITTLE_ENDIAN</span></tt> set, the data will be read from
+little-endian format.  If both <tt class="docutils literal"><span class="pre">attr.BIG_ENDIAN</span></tt> and <tt class="docutils literal"><span class="pre">attr.LITTLE_ENDIAN</span></tt> are
+set, a <tt class="docutils literal"><span class="pre">ValueError</span></tt> exception is raised.</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id12" id="remove-attr" name="remove-attr">4.2.3&nbsp;&nbsp;&nbsp;remove_attr()</a></h3>
+<p>Signature:</p>
+<pre class="literal-block">
+remove_attr(filename, attr_name, flags=0)
+</pre>
+<p>Remove the specified attribute from filename.</p>
+<p>If flags is <tt class="docutils literal"><span class="pre">attr.SYMLINK</span></tt>, symbolic links <em>will not</em> be traversed;
+you'll remove the attribute data for the symlink, not the target.</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id13" id="write-attr" name="write-attr">4.2.4&nbsp;&nbsp;&nbsp;write_attr()</a></h3>
+<p>Signature:</p>
+<pre class="literal-block">
+write_attr(filename, attr_name, attr_type, attr_data, flags=0)
+</pre>
+<p>Write an attribute to filename.</p>
+<p>If flags has <tt class="docutils literal"><span class="pre">attr.SYMLINK</span></tt> set, symbolic links <em>will not</em> be traversed;
+you'll set the attribute data on the symlink, not the target.
+If flags has <tt class="docutils literal"><span class="pre">attr.BIG_ENDIAN</span></tt> set, the data will be written in big-endian
+format; if flags has <tt class="docutils literal"><span class="pre">attr.LITTLE_ENDIAN</span></tt> set, the data will be written in
+little-endian format.  If both <tt class="docutils literal"><span class="pre">attr.BIG_ENDIAN</span></tt> and <tt class="docutils literal"><span class="pre">attr.LITTLE_ENDIAN</span></tt> are
+set, a <tt class="docutils literal"><span class="pre">ValueError</span></tt> exception is raised.</p>
+<p><tt class="docutils literal"><span class="pre">attr_type</span></tt> can be a four-character string, or a number; you'll get
+a <tt class="docutils literal"><span class="pre">TypeError</span></tt> exception if the data doesn't match the type in a
+reasonable manner.</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id14" id="query" name="query">4.2.5&nbsp;&nbsp;&nbsp;query()</a></h3>
+<p>Signature:</p>
+<pre class="literal-block">
+query(query_string, device=&quot;/boot&quot;, flags=0)
+</pre>
+<p>Perform a one-shot query.  The <tt class="docutils literal"><span class="pre">query_string</span></tt> must be a standard BeOS
+query, specified as a string.  Device can be any path, and defaults
+to your boot volume; it specifies the volume that will be queried.
+flags must currently be 0, so don't bother specifying it.</p>
+<p>Returns a list of paths.</p>
+</div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id15" id="constants" name="constants">4.3&nbsp;&nbsp;&nbsp;Constants</a></h2>
+<p>Even though the constants are dictionaries, they can be accessed like members of a namespace.</p>
+<p>Therefore, these two are equivalent:</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; import beos.storage
+&gt;&gt;&gt; print beos.storage.directory_which.B_BEOS_DIRECTORY
+1000
+&gt;&gt;&gt; print beos.storage.directory_which[&quot;B_BEOS_DIRECTORY&quot;]
+1000
+</pre>
+<div class="section">
+<h3><a class="toc-backref" href="#id16" id="directory-which" name="directory-which">4.3.1&nbsp;&nbsp;&nbsp;directory_which</a></h3>
+<ul class="simple">
+<li>B_DESKTOP_DIRECTORY</li>
+<li>B_TRASH_DIRECTORY</li>
+<li>B_BEOS_DIRECTORY</li>
+<li>B_BEOS_SYSTEM_DIRECTORY</li>
+<li>B_BEOS_ADDONS_DIRECTORY</li>
+<li>B_BEOS_BOOT_DIRECTORY</li>
+<li>B_BEOS_FONTS_DIRECTORY</li>
+<li>B_BEOS_LIB_DIRECTORY</li>
+<li>B_BEOS_SERVERS_DIRECTORY</li>
+<li>B_BEOS_APPS_DIRECTORY</li>
+<li>B_BEOS_BIN_DIRECTORY</li>
+<li>B_BEOS_ETC_DIRECTORY</li>
+<li>B_BEOS_DOCUMENTATION_DIRECTORY</li>
+<li>B_BEOS_PREFERENCES_DIRECTORY</li>
+<li>B_BEOS_TRANSLATORS_DIRECTORY</li>
+<li>B_BEOS_MEDIA_NODES_DIRECTORY</li>
+<li>B_BEOS_SOUNDS_DIRECTORY</li>
+<li>B_COMMON_DIRECTORY</li>
+<li>B_COMMON_SYSTEM_DIRECTORY</li>
+<li>B_COMMON_ADDONS_DIRECTORY</li>
+<li>B_COMMON_BOOT_DIRECTORY</li>
+<li>B_COMMON_FONTS_DIRECTORY</li>
+<li>B_COMMON_LIB_DIRECTORY</li>
+<li>B_COMMON_SERVERS_DIRECTORY</li>
+<li>B_COMMON_BIN_DIRECTORY</li>
+<li>B_COMMON_ETC_DIRECTORY</li>
+<li>B_COMMON_DOCUMENTATION_DIRECTORY</li>
+<li>B_COMMON_SETTINGS_DIRECTORY</li>
+<li>B_COMMON_DEVELOP_DIRECTORY</li>
+<li>B_COMMON_LOG_DIRECTORY</li>
+<li>B_COMMON_SPOOL_DIRECTORY</li>
+<li>B_COMMON_TEMP_DIRECTORY</li>
+<li>B_COMMON_VAR_DIRECTORY</li>
+<li>B_COMMON_TRANSLATORS_DIRECTORY</li>
+<li>B_COMMON_MEDIA_NODES_DIRECTORY</li>
+<li>B_COMMON_SOUNDS_DIRECTORY</li>
+<li>B_USER_DIRECTORY</li>
+<li>B_USER_CONFIG_DIRECTORY</li>
+<li>B_USER_ADDONS_DIRECTORY</li>
+<li>B_USER_BOOT_DIRECTORY</li>
+<li>B_USER_FONTS_DIRECTORY</li>
+<li>B_USER_LIB_DIRECTORY</li>
+<li>B_USER_SETTINGS_DIRECTORY</li>
+<li>B_USER_DESKBAR_DIRECTORY</li>
+<li>B_USER_PRINTERS_DIRECTORY</li>
+<li>B_USER_TRANSLATORS_DIRECTORY</li>
+<li>B_USER_MEDIA_NODES_DIRECTORY</li>
+<li>B_USER_SOUNDS_DIRECTORY</li>
+<li>B_APPS_DIRECTORY</li>
+<li>B_PREFERENCES_DIRECTORY</li>
+<li>B_UTILITIES_DIRECTORY</li>
+</ul>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id17" id="types" name="types">4.3.2&nbsp;&nbsp;&nbsp;types</a></h3>
+<ul class="simple">
+<li>B_ANY_TYPE</li>
+<li>B_ASCII_TYPE</li>
+<li>B_BOOL_TYPE</li>
+<li>B_CHAR_TYPE</li>
+<li>B_COLOR_8_BIT_TYPE</li>
+<li>B_DOUBLE_TYPE</li>
+<li>B_FLOAT_TYPE</li>
+<li>B_GRAYSCALE_8_BIT_TYPE</li>
+<li>B_INT16_TYPE</li>
+<li>B_INT32_TYPE</li>
+<li>B_INT64_TYPE</li>
+<li>B_INT8_TYPE</li>
+<li>B_MEDIA_PARAMETER_GROUP_TYPE</li>
+<li>B_MEDIA_PARAMETER_TYPE</li>
+<li>B_MEDIA_PARAMETER_WEB_TYPE</li>
+<li>B_MESSAGE_TYPE</li>
+<li>B_MESSENGER_TYPE</li>
+<li>B_MIME_STRING_TYPE</li>
+<li>B_MIME_TYPE</li>
+<li>B_MONOCHROME_1_BIT_TYPE</li>
+<li>B_OBJECT_TYPE</li>
+<li>B_OFF_T_TYPE</li>
+<li>B_PATTERN_TYPE</li>
+<li>B_POINTER_TYPE</li>
+<li>B_POINT_TYPE</li>
+<li>B_RAW_TYPE</li>
+<li>B_RECT_TYPE</li>
+<li>B_REF_TYPE</li>
+<li>B_RGB_32_BIT_TYPE</li>
+<li>B_RGB_COLOR_TYPE</li>
+<li>B_SIZE_T_TYPE</li>
+<li>B_SSIZE_T_TYPE</li>
+<li>B_STRING_TYPE</li>
+<li>B_TIME_TYPE</li>
+<li>B_UINT16_TYPE</li>
+<li>B_UINT32_TYPE</li>
+<li>B_UINT64_TYPE</li>
+<li>B_UINT8_TYPE</li>
+</ul>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id18" id="attr" name="attr">4.3.3&nbsp;&nbsp;&nbsp;attr</a></h3>
+<ul class="simple">
+<li>SYMLINK</li>
+<li>BIG_ENDIAN</li>
+<li>LITTLE_ENDIAN</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

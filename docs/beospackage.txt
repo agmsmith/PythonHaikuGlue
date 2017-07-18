@@ -1,0 +1,60 @@
+===============
+  The Py Book
+===============
+
+.. sidebar:: Mmm, pie... </Homer>
+	
+	.. image:: art/logo.jpg
+		:align: right
+
+	The gateway between BeOS/ZETA/Haiku and the easy-to-use, dynamic
+	rapid-prototyping programming language Python.
+
+	Carefully selected functions, classes and constants
+	imported from the BeAPI directly to Python, to make *your* life easier!
+
+.. contents:: Table of Contents
+.. section-numbering::
+
+About
+=====
+:Author: Mikael Jansson
+:Version: 0.1.0
+:Date: $Date: 2005-10-30 14:15:14 +0100 (Sun, 30 Oct 2005) $
+:Revision: $Revision: 38 $
+:Authors: Parts by Chris Herborth
+
+Installation
+============
+
+Binary Distribution
+*******************
+Grab the binary package for your platform, and then issue the following commands (based on platform).
+
+yellowTAB ZETA Release 1.1::
+	
+	$ cd / && tar xzf BeOS-0.1.0.beos-6.0.1-BePC.tar.gz
+
+Source Distribution
+*******************
+Unzip the source package somewhere, ``cd`` into it and type the
+following command::
+
+	$ python setup.py install
+
+Bleeding Edge Distribution
+**************************
+Check out the latest sources from SVN::
+
+	$ svn co http://svnbox.mine.nu/public/BeOSmodule
+	$ cd BeOSmodule
+	$ python setup.py install
+
+Reading Guidelines
+====================
+All of the functions have ``__doc__`` strings for your viewing pleasure.
+Very handy if you're using this interactively.
+
+Modules are often named the same as the kit's name in lower-case characters, e.g. the Storage Kit is named ``beos.storage``.
+
+.. include:: storage.txt

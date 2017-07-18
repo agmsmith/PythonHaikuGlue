@@ -1,0 +1,194 @@
+Storage Kit
+===========
+
+Module name: ``beos.storage``
+
+Classes
+*******
+
+Functions
+*********
+
+find_directory()
+----------------
+Signature::
+
+	find_directory(which)
+
+Finds the specified directory; which must be one of the ``attr.B_..._DIRECTORY``
+constants defined in this module.
+
+
+read_attrs()
+------------
+Signature::
+
+	read_attrs(filename, flags=0)
+
+Reads the attributes for filename; returns a dictionary of tuples,
+each tuple is ( type, data ) and the key is the attribute name.
+
+If flags is ``attr.SYMLINK``, symbolic links *will not* be traversed;
+you'll get the attribute data for the symlink, not the target.
+If flags has ``attr.BIG_ENDIAN`` set, the data will be read from big-endian
+format; if flags has ``attr.LITTLE_ENDIAN`` set, the data will be read from
+little-endian format.  If both ``attr.BIG_ENDIAN`` and ``attr.LITTLE_ENDIAN`` are
+set, a ``ValueError`` exception is raised.
+
+remove_attr()
+-------------
+Signature::
+
+	remove_attr(filename, attr_name, flags=0)
+
+Remove the specified attribute from filename.
+
+If flags is ``attr.SYMLINK``, symbolic links *will not* be traversed;
+you'll remove the attribute data for the symlink, not the target.
+
+write_attr()
+------------
+Signature::
+
+	write_attr(filename, attr_name, attr_type, attr_data, flags=0)
+
+Write an attribute to filename.
+
+If flags has ``attr.SYMLINK`` set, symbolic links *will not* be traversed;
+you'll set the attribute data on the symlink, not the target.
+If flags has ``attr.BIG_ENDIAN`` set, the data will be written in big-endian
+format; if flags has ``attr.LITTLE_ENDIAN`` set, the data will be written in
+little-endian format.  If both ``attr.BIG_ENDIAN`` and ``attr.LITTLE_ENDIAN`` are
+set, a ``ValueError`` exception is raised.
+	
+``attr_type`` can be a four-character string, or a number; you'll get
+a ``TypeError`` exception if the data doesn't match the type in a
+reasonable manner.
+
+query()
+-------
+Signature::
+
+	query(query_string, device="/boot", flags=0)
+
+Perform a one-shot query.  The ``query_string`` must be a standard BeOS
+query, specified as a string.  Device can be any path, and defaults
+to your boot volume; it specifies the volume that will be queried.
+flags must currently be 0, so don't bother specifying it.
+	
+Returns a list of paths.
+
+Constants
+*********
+
+Even though the constants are dictionaries, they can be accessed like members of a namespace.
+
+Therefore, these two are equivalent:
+
+>>> import beos.storage
+>>> print beos.storage.directory_which.B_BEOS_DIRECTORY
+1000
+>>> print beos.storage.directory_which["B_BEOS_DIRECTORY"]
+1000
+
+
+directory_which
+---------------
+- B_DESKTOP_DIRECTORY
+- B_TRASH_DIRECTORY
+- B_BEOS_DIRECTORY
+- B_BEOS_SYSTEM_DIRECTORY
+- B_BEOS_ADDONS_DIRECTORY
+- B_BEOS_BOOT_DIRECTORY
+- B_BEOS_FONTS_DIRECTORY
+- B_BEOS_LIB_DIRECTORY
+- B_BEOS_SERVERS_DIRECTORY
+- B_BEOS_APPS_DIRECTORY
+- B_BEOS_BIN_DIRECTORY
+- B_BEOS_ETC_DIRECTORY
+- B_BEOS_DOCUMENTATION_DIRECTORY
+- B_BEOS_PREFERENCES_DIRECTORY
+- B_BEOS_TRANSLATORS_DIRECTORY
+- B_BEOS_MEDIA_NODES_DIRECTORY
+- B_BEOS_SOUNDS_DIRECTORY
+- B_COMMON_DIRECTORY
+- B_COMMON_SYSTEM_DIRECTORY
+- B_COMMON_ADDONS_DIRECTORY
+- B_COMMON_BOOT_DIRECTORY
+- B_COMMON_FONTS_DIRECTORY
+- B_COMMON_LIB_DIRECTORY
+- B_COMMON_SERVERS_DIRECTORY
+- B_COMMON_BIN_DIRECTORY
+- B_COMMON_ETC_DIRECTORY
+- B_COMMON_DOCUMENTATION_DIRECTORY
+- B_COMMON_SETTINGS_DIRECTORY
+- B_COMMON_DEVELOP_DIRECTORY
+- B_COMMON_LOG_DIRECTORY
+- B_COMMON_SPOOL_DIRECTORY
+- B_COMMON_TEMP_DIRECTORY
+- B_COMMON_VAR_DIRECTORY
+- B_COMMON_TRANSLATORS_DIRECTORY
+- B_COMMON_MEDIA_NODES_DIRECTORY
+- B_COMMON_SOUNDS_DIRECTORY
+- B_USER_DIRECTORY
+- B_USER_CONFIG_DIRECTORY
+- B_USER_ADDONS_DIRECTORY
+- B_USER_BOOT_DIRECTORY
+- B_USER_FONTS_DIRECTORY
+- B_USER_LIB_DIRECTORY
+- B_USER_SETTINGS_DIRECTORY
+- B_USER_DESKBAR_DIRECTORY
+- B_USER_PRINTERS_DIRECTORY
+- B_USER_TRANSLATORS_DIRECTORY
+- B_USER_MEDIA_NODES_DIRECTORY
+- B_USER_SOUNDS_DIRECTORY
+- B_APPS_DIRECTORY
+- B_PREFERENCES_DIRECTORY
+- B_UTILITIES_DIRECTORY
+
+types
+-----
+- B_ANY_TYPE
+- B_ASCII_TYPE
+- B_BOOL_TYPE
+- B_CHAR_TYPE
+- B_COLOR_8_BIT_TYPE
+- B_DOUBLE_TYPE
+- B_FLOAT_TYPE
+- B_GRAYSCALE_8_BIT_TYPE
+- B_INT16_TYPE
+- B_INT32_TYPE
+- B_INT64_TYPE
+- B_INT8_TYPE
+- B_MEDIA_PARAMETER_GROUP_TYPE
+- B_MEDIA_PARAMETER_TYPE
+- B_MEDIA_PARAMETER_WEB_TYPE
+- B_MESSAGE_TYPE
+- B_MESSENGER_TYPE
+- B_MIME_STRING_TYPE
+- B_MIME_TYPE
+- B_MONOCHROME_1_BIT_TYPE
+- B_OBJECT_TYPE
+- B_OFF_T_TYPE
+- B_PATTERN_TYPE
+- B_POINTER_TYPE
+- B_POINT_TYPE
+- B_RAW_TYPE
+- B_RECT_TYPE
+- B_REF_TYPE
+- B_RGB_32_BIT_TYPE
+- B_RGB_COLOR_TYPE
+- B_SIZE_T_TYPE
+- B_SSIZE_T_TYPE
+- B_STRING_TYPE
+- B_TIME_TYPE
+- B_UINT16_TYPE
+- B_UINT32_TYPE
+- B_UINT64_TYPE
+- B_UINT8_TYPE
+
+attr
+----
+- SYMLINK
+- BIG_ENDIAN
+- LITTLE_ENDIAN
