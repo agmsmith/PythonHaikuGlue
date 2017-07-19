@@ -7,7 +7,9 @@ vendor			"Fat Elk Software"
 
 description		"Python glue to access the Haiku C++ API for some operations.
 
-Currently reading/writing file attributes (with conversion of several data types to/from native Python objects), doing a one shot query, and using find_directory are implemented.  More can be added if needed."
+Currently reading/writing file attributes (with conversion of several data types to/from native Python objects), doing a one shot query, and using find_directory are implemented.  More can be added if needed.
+
+Initially written by Chris Herborth and then Mikael Jansson.  Alex got permission in 2017 from Chris to release it under the MIT license."
 
 copyrights {
 	"1999 Arcane Dragon Software <arcanedragon@pobox.com>"
